@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block header %}
+    <h1>{% block title %}成绩分析{% endblock %}</h1>
+    <a class="action" href="{{ url_for('score.index')}}">浏览成绩</a>
+{% endblock %}
+
+
+{% block content %}
+    <form method="post">
+        <label>录入成绩数量</label>
+        <em>{{ g.scoreCnt }}</em>
+        <label >最高分</label>
+        <em>{{ g.maxScore }}</em>
+        <label>最低分</label>
+        <em>{{ g.minScore }}</em>
+        <label>平均分</label>
+        <em>{{ g.averageScore }}</em>
+        <label>优秀人数</label>
+        <em>{{ g.excellentCnt }}</em>
+        <label>不及格人数</label>
+        <em>{{ g.failCnt }}</em>
+    </form>
+    
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block header %}
+
+<h1>{% block title %}新建成绩{% endblock %}</h1>
+{% endblock %}
+
+
+{% block content %}
+<form method = "post">
+    <label for="score">成绩</label>
+    <input name="score" id ="score" type="number"
+            v-model ="num" min = "0" max="100"
+            value="{{request.from['score']}}" required>
+    <input type="submit" value="保存">
+</form>
+{% endblock %}
